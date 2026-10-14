@@ -1,1 +1,98 @@
 
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GECE ARŞİVİ — Korku Sineması</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Gece Arşivi ana sayfa">
+      <span class="brand-mark">G<span>✦</span></span>
+      <span>GECE<span class="brand-light">ARŞİVİ</span><small>SADECE KARANLIKTA İZLE</small></span>
+    </a>
+    <nav>
+      <a href="#arsiv">Arşiv</a>
+      <a href="#kontrol">Film kontrolü</a>
+      <a href="#hakkinda">Proje hakkında</a>
+    </nav>
+    <button class="ghost-btn" id="openAddTop">＋ Film öner</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> GECE ARŞİVİ · DOSYA NO. 013</div>
+        <h1>Her hikâye<br>karanlığa <em>ait değil.</em></h1>
+        <p>En ürpertici hikâyeleri keşfet. Arşive yeni bir film eklemeden önce açıklamasını inceleyelim — çünkü burada yalnızca korkuya yer var.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#arsiv">Arşivi keşfet <span>↘</span></a>
+          <a class="text-link" href="#kontrol">Bir filmi test et <span>→</span></a>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="filmCount">06</strong><span>ARŞİVDEKİ FİLM</span></div>
+          <div><strong>01</strong><span>KURAL</span></div>
+          <div><strong>100%</strong><span>KARANLIK</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Karanlık, sisli orman illüstrasyonu">
+        <div class="moon"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
+        <div class="tree t1"></div><div class="tree t2"></div><div class="tree t3"></div><div class="tree t4"></div>
+        <div class="art-label"><span>ARŞİV KAYDI</span><strong>GECE / 013</strong><small>SON GÜNCELLEME: 03:17</small></div>
+        <div class="vertical-word">DO NOT LOOK BACK</div>
+      </div>
+    </section>
+
+    <section class="section" id="arsiv">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / KOLEKSİYON</div><h2>Karanlığın içinden.</h2></div>
+        <div class="filters" role="group" aria-label="Film filtreleri">
+          <button class="filter active" data-filter="all">Tümü</button>
+          <button class="filter" data-filter="paranormal">Paranormal</button>
+          <button class="filter" data-filter="slasher">Slasher</button>
+          <button class="filter" data-filter="psychological">Psikolojik</button>
+        </div>
+      </div>
+      <div class="movie-grid" id="movieGrid"></div>
+    </section>
+
+    <section class="checker-section" id="kontrol">
+      <div class="checker-intro">
+        <div class="eyebrow">02 / ARŞİV KAPISI</div>
+        <h2>Bu film<br><em>içeri girebilir mi?</em></h2>
+        <p>Filmin adını yaz. Arşiv bekçisi (Doğal Dil İşleme), film açıklamasını otomatik üretip korku temalarını kontrol etsin.</p>
+        <div class="rule-card"><span class="rule-icon">⌁</span><div><strong>ARŞİV KURALI #001</strong><p>Korku atmosferi yoksa, arşiv kapısı açılmaz.</p></div></div>
+      </div>
+      <form class="checker-form" id="filmForm">
+        <label for="filmTitle">FİLMİN ADI</label>
+        <input id="filmTitle" name="title" placeholder="Örn: Dabbe, Çığlık, Recep İvedik..." maxlength="90" required>
+        <label for="filmDescription">FİLM AÇIKLAMASI (OTOMATİK DOLDURULUR)</label>
+        <textarea id="filmDescription" name="description" rows="5" placeholder="Film adını yazdığınızda burası otomatik dolacaktır..."></textarea>
+        <div class="form-bottom"><span><span class="live-dot"></span> ARŞİV BEKÇİSİ AKTİF</span><span id="charCount">0 karakter</span></div>
+        <button class="primary-btn full" type="submit">Açıklamayı incele <span>↗</span></button>
+        <div class="result hidden" id="result" aria-live="polite"></div>
+        <p class="demo-note">Statik NLP modu: Film adı yazıldığında otomatik konu analizi yapılır.</p>
+      </form>
+    </section>
+
+    <section class="section about" id="hakkinda">
+      <div><div class="eyebrow">03 / PROJE NOTU</div><h2>Bir arayüzden fazlası.</h2></div>
+      <div class="about-copy">
+        <p>Gece Arşivi, film açıklamalarını analiz ederek yalnızca korku türüne uygun içerikleri kabul etmeyi hedefleyen bir NLP proje prototipidir.</p>
+        <div class="tech-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>NLP Entegrasyonu</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#"><span class="brand-mark">G<span>✦</span></span><span>GECE<span class="brand-light">ARŞİVİ</span></span></a>
+    <span>HER HİKÂYE KARANLIĞA AİT DEĞİL.</span>
+    <span>© 2026 GECE ARŞİVİ</span>
+  </footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
